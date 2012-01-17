@@ -1,0 +1,91 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>com.anteash</groupId>
+    <artifactId>gzipcompressor-maven-plugin</artifactId>
+    <version>0.0.1</version>
+    <packaging>maven-plugin</packaging>
+
+    <name>Gzip Compressor Maven Mojo</name>
+    <url>http://github.com/chiccorusso/${project.artifactId}</url>
+    <inceptionYear>2012</inceptionYear>
+
+    <description>
+        Compresses files using gzip.
+    </description>
+
+    <scm>
+        <connection>scm:git:git://github.com/chiccorusso/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:chiccorusso/${project.artifactId}.git</developerConnection>
+        <url>git@github.com:chiccorusso/${project.artifactId}.git</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>http://github.com/chiccorusso/${project.artifactId}/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>m2</id>
+            <name>Repository m2.antea.bogus</name>
+            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
+        </snapshotRepository>
+        <repository>
+            <id>m2</id>
+            <name>Repository m2.antea.bogus</name>
+            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
+        </repository>
+    </distributionManagement>
+    
+    <licenses>
+        <license>
+            <name>Creative Commons GNU LGPL, Version 2.1</name>
+            <url>http://creativecommons.org/licenses/LGPL/2.1/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Antea srl</name>
+        <url>http://www.anteash.com/</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>chicco</id>
+            <name>Federico Russo</name>
+            <timezone>GMT+1</timezone>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>2.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>2.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
