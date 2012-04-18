@@ -11,7 +11,7 @@ import org.codehaus.plexus.util.IOUtil;
  * Apply compression with GZip.
  *
  * @goal compress
- * @phase process-resources
+ * @phase prepare-package
  *
  * @author Federico Russo
  * @created 2012-01-17
