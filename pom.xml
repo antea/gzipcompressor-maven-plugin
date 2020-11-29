@@ -9,38 +9,22 @@
 
     <groupId>com.anteash</groupId>
     <artifactId>gzipcompressor-maven-plugin</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>maven-plugin</packaging>
 
     <name>Gzip Compressor Maven Mojo</name>
-    <url>http://github.com/chiccorusso/${project.artifactId}</url>
+    <url>https://github.com/antea/${project.artifactId}</url>
     <inceptionYear>2012</inceptionYear>
 
     <description>
         Compresses files using gzip.
     </description>
 
-    <scm>
-        <connection>scm:git:git://github.com/chiccorusso/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:git@github.com:chiccorusso/${project.artifactId}.git</developerConnection>
-        <url>git@github.com:chiccorusso/${project.artifactId}.git</url>
-    </scm>
-
-    <issueManagement>
-        <system>GitHub</system>
-        <url>http://github.com/chiccorusso/${project.artifactId}/issues</url>
-    </issueManagement>
-
     <distributionManagement>
-        <snapshotRepository>
-            <id>m2</id>
-            <name>Repository m2.antea.bogus</name>
-            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
-        </snapshotRepository>
         <repository>
-            <id>m2</id>
-            <name>Repository m2.antea.bogus</name>
-            <url>scp://deployer@m2.antea.bogus/srv/maven</url>
+            <id>github</id>
+            <name>GitHub antea Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/antea/gzipcompressor-maven-plugin</url>
         </repository>
     </distributionManagement>
     
