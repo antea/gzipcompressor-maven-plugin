@@ -1,22 +1,20 @@
 package com.anteash.gzipcompressor;
 
+import org.codehaus.plexus.util.FileUtils;
+import org.codehaus.plexus.util.IOUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.zip.GZIPOutputStream;
-import org.codehaus.plexus.util.FileUtils;
-import org.codehaus.plexus.util.IOUtil;
 
 /**
  * Apply compression with GZip.
- *
+ * @author Federico Russo
  * @goal compress
  * @phase prepare-package
- *
- * @author Federico Russo
  * @created 2012-01-17
  */
-@SuppressWarnings("unchecked")
 public class GzipCompressorMojo extends MojoSupport {
 
     @Override

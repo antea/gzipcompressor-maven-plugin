@@ -1,11 +1,12 @@
 package com.anteash.gzipcompressor;
 
-import java.io.File;
-import java.util.List;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.codehaus.plexus.util.DirectoryScanner;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * Common class for mojos.
@@ -13,7 +14,6 @@ import org.codehaus.plexus.util.DirectoryScanner;
  * @author David Bernard
  * @created 2007-08-29
  */
-@SuppressWarnings("unchecked")
 public abstract class MojoSupport extends AbstractMojo {
 
     private static final String[] EMPTY_STRING_ARRAY = {};
