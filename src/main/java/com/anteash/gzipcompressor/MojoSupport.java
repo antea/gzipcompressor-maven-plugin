@@ -2,10 +2,10 @@ package com.anteash.gzipcompressor;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.codehaus.plexus.util.DirectoryScanner;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -37,25 +37,17 @@ public abstract class MojoSupport extends AbstractMojo {
      */
     private List<String> includes;
 
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    public void execute() throws MojoExecutionException {
         try {
             processDir(sourceDirectory);
-//            getLog().info(String.format("nb warnings: %d, nb errors: %d", jsErrorReporter_.getWarningCnt(), jsErrorReporter_.getErrorCnt()));
-//            if (failOnWarning && (jsErrorReporter_.getWarningCnt() > 0)) {
-//                throw new MojoFailureException("warnings on " + this.getClass().getSimpleName() + "=> failure ! (see log)");
-//            }
         } catch (RuntimeException exc) {
-            throw exc;
-        } catch (MojoFailureException exc) {
-            throw exc;
-        } catch (MojoExecutionException exc) {
             throw exc;
         } catch (Exception exc) {
             throw new MojoExecutionException("wrap: " + exc.getMessage(), exc);
         }
     }
 
-    protected void processDir(final File srcRoot) throws Exception {
+    protected void processDir(final File srcRoot) throws IOException {
         if ((srcRoot == null) || (!srcRoot.exists())) {
             return;
         }
@@ -71,10 +63,9 @@ public abstract class MojoSupport extends AbstractMojo {
         scanner.addDefaultExcludes();
         scanner.scan();
         for (final String name : scanner.getIncludedFiles()) {
-//            jsErrorReporter_.setDefaultFileName("..." + src.toFile().getAbsolutePath().substring(project.getBasedir().getAbsolutePath().length()));
             processFile(new File(srcRoot, name));
         }
     }
 
-    protected abstract void processFile(final File file) throws Exception;
+    protected abstract void processFile(final File file) throws IOException;
 }

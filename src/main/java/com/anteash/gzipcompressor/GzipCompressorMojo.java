@@ -3,9 +3,7 @@ package com.anteash.gzipcompressor;
 import org.codehaus.plexus.util.FileUtils;
 import org.codehaus.plexus.util.IOUtil;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.util.zip.GZIPOutputStream;
 
 /**
@@ -18,7 +16,7 @@ import java.util.zip.GZIPOutputStream;
 public class GzipCompressorMojo extends MojoSupport {
 
     @Override
-    protected void processFile(final File file) throws Exception {
+    protected void processFile(final File file) throws IOException {
         if ((file == null) || (!file.exists())) {
             return;
         }
