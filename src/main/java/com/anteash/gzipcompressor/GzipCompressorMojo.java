@@ -4,6 +4,7 @@ import org.codehaus.plexus.util.FileUtils;
 import org.codehaus.plexus.util.IOUtil;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.zip.GZIPOutputStream;
 
 /**
@@ -26,7 +27,7 @@ public class GzipCompressorMojo extends MojoSupport {
 
         final File gzipped = new File(file.getAbsolutePath() + ".gz");
         getLog().debug(String.format("Compressing %s to %s", file.getName(), gzipped.getName()));
-        try (GZIPOutputStream out = new GZIPOutputStream(new FileOutputStream(gzipped));
+        try (GZIPOutputStream out = new GZIPOutputStream(Files.newOutputStream(gzipped.toPath()));
              FileInputStream in = new FileInputStream(file)) {
             IOUtil.copy(in, out);
         }
