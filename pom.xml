@@ -5,7 +5,7 @@
 
     <groupId>com.anteash</groupId>
     <artifactId>gzipcompressor-maven-plugin</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>maven-plugin</packaging>
 
     <name>Gzip Compressor Maven Mojo</name>
@@ -54,8 +54,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <sonar.organization>antea</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <maven.version>3.8.1</maven.version>
-        <maven-plugin-tools.version>3.8.1</maven-plugin-tools.version>
+        <maven.version>3.6.3</maven.version>
+        <maven-plugin-tools.version>3.6.4</maven-plugin-tools.version>
     </properties>
 
     <prerequisites>
